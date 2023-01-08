@@ -17,8 +17,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.css" integrity="sha512-Y0MM+V6ymRKN2zStTqzQ227DWhhp4Mzdo6gnlRnuaNCbc+YN/ZH0sBCLTM4M0oSy9c9VKiCvd4Jk44aCLrNS5Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="./style.css" rel="stylesheet" type="text/css">
+  
+    <link href="./css/main.min.css" rel="stylesheet" type="text/css">
     <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
@@ -28,104 +28,269 @@
     <meta name="theme-color" content="#ffffff">
    
   </head>
-  <body>
+  <body class="body">
     <header class="header">
-      <div class="logo">
+      <div class="header-conteiner">
         <div class="logo-home">
           <a href="./index.html" alt="Главная страница">
-            <svg class="logoword" width="220px" height="32px">
-              <use href="./svg/sprite.svg#icon-word"></use>
+            <svg class="logoword">
+              <use href="./svg/variantsprite.svg#icon-variant-logo-01"></use>
             </svg>
           </a>
          
         </div>
+        <button 
+        type="button" 
+        class="burger-btn" 
+        data-menu-button
+        aria-expanded="false">
+         <svg 
+         class="burger-svg" 
+         width="20px" 
+         height="20px"
+         aria-label="переключатель мобильного меню">
+          <use class="burger-burger" href="./svg/sprite.svg#icon-menu" ></use>
+          <use class="burger-cros" href="./svg/sprite.svg#icon-cross"></use>
+         </svg>
+        </button>
+       
+      </div>
+      <div class="nav-display" data-menu>
         <nav class="nav">
-          <ul class="menu list-reset">
-            <li class="menu-item">
-              <a href="./index.html#about" alt="О нас">О нас</a>
-            </li>
-            <li class="menu-item">
-              <a href="./index.html#contacts" alt="Контакты">Контакты</a>
-            </li>
-            <li class="menu-item">
-              <a href="./index.html#servises" alt="Услуги">Услуги</a>
-            </li>
-          </ul>
+          <div class="menu">
+            <ul class="menu-list list-reset">
+              <li class="menu-item">
+                <a class="menu-item__link" href="./index.html#about" alt="О нас">О нас</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item__link" href="./index.html#contacts" alt="Контакты">Контакты</a>
+              </li>
+              <li class="menu-item">
+                <a class="menu-item__link" href="./index.html#servises" alt="Услуги">Услуги</a>
+              </li>
+            </ul>
+          </div>
 
-          <ul class="contact list-reset">
-            <li class="tel menu-item">
-              <a href="tel:+380682595975" alt="Позвонить">+38(068)259-59-75</a>
-            </li>
-            <li class="mail menu-item">
-              <a href="mailto:uf.variant@gmail.com" alt="Написать письмо">uf.variant@gmail.com</a>
-            </li>
-          </ul>
+          <div class="contacts">
+            <ul class="contacts-list list-reset">
+              <li class="contacts-item tel">
+                <a class="contact-item__link" href="tel:+380682595975" alt="Позвонить">+38(068)259-59-75</a>
+              </li>
+              <li class="contacts-item mail">
+                <a class="contact-item__link" href="mailto:uf.variant@gmail.com" alt="Написать письмо">uf.variant@gmail.com</a>
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
     </header>
     <main class="main">
       <section class="hero">
-        <div class="hero-text">
-          <h1 class="hero-title">ЮРИДИЧЕСКАЯ ФИРМА "ВАРИАНТ"</h1>
-          <p class="slogan">Ваш лучший вариант</p>
-          <p class="description-text">
-            Юридическая фирма "Вариант" основана юристами специализирующимся на
-            разных отраслях права, каждый из которых имеет более чем 10-летний
-            опыт работы по специальности в Украине.
-          </p>
+        <div class="hero-conteiner">
+          <div class="hero-text">
+            <h1 class="hero-text__title">ЮРИДИЧЕСКАЯ ФИРМА "ВАРИАНТ"</h1>
+            <p class="hero-text__slogan">Ваш лучший вариант</p>
+            <p class="hero-text__description">
+              Юридическая фирма "Вариант" основана юристами специализирующимся на
+              разных отраслях права, каждый из которых имеет более чем 10-летний
+              опыт работы по специальности в Украине.
+            </p>
+          </div>
+          <div class="btn-conteiner">
+            <button type="button" class="btn-conteiner__form" data-modal-open>
+           <p class="btn-conteiner__text">Консультация</p>
+            </button>
         </div>
-        <!-- <div class="about-button">
-            <a href="...">Контакты</a>
-        </div> -->
-        </section>
-        <div id="about"></div>
+        
+          <div class="backdrop" data-modal>
+            <div class="modal-window">
+              <form class="modal-window__form js-form" autocomplete="off">
+               <button type="button" class="modal-close__btn" data-modal-close>
+                <svg 
+                class="modal-window__cross" 
+               
+                aria-label="закрыть окно формы">
+                 <use class="burger-cros" href="./svg/sprite.svg#icon-cross"></use>
+                </svg>
+               </button>
+                
+                <label class="form-field">
+                    
+                    <input
+                        class="form-input" 
+                        type="text" 
+                        name="user-name" 
+                        autofocus 
+                        placeholder=" "
+                        />
+                        <span class="form-input__icon name"></span>
+                        <span class="form-input__label">
+                            Имя
+                        </span>
+                </label>
+        
+                <label class="form-field">
+                    
+                    <input
+                        class="form-input"
+                        type="tel" 
+                        name="tel" 
+                        id="tel" 
+                        autocomplete="on"
+                        placeholder=" " 
+                        />
+                        <span class="form-input__icon tel-form"></span>
+                        <span class="form-input__label">
+                            Телефон
+                        </span>
+                </label>
+                <label class="form-field">
+                    
+                    <input
+                        class="form-input"
+                        type="email" 
+                        name="email" 
+                        id="email" 
+                        autocomplete="on" 
+                        placeholder=" "
+                        />
+                        <span class="form-input__icon mail-form">
+  
+                        </span>
+                        <span class="form-input__label">
+                            Эл.почта
+                        </span>
+                </label>
+                 
+                <div role="group" class="form-group">
+                    <h2 class="form-group__title">Вид консультации</h2>
+        
+                <ul class="topic-options">
+                    <li>            
+                        <label class="checkbox-label">
+                            <input 
+                            class="checkbox"
+                            type="checkbox" 
+                            name="topic" 
+                            velue="Письменная консультация"
+                            />
+                            <span class="topic-options__icon"></span>
+                           <span class="topic-options__text">Письменная консультация</span>  
+                        </label>
+                    </li>
+        
+                    <li>
+                        
+                        <label class="checkbox-label">
+                            <input 
+                            class="checkbox"
+                            type="checkbox" 
+                            name="topic" 
+                            velue="Консультация по телефону"
+                            />
+                            <span class="topic-options__icon"></span>
+                            <span class="topic-options__text">Консультация по телефону</span>  
+                        </label>
+                       
+                    </li>
+        
+                    <li>
+                        
+                        <label class="checkbox-label">
+                            <input 
+                            class="checkbox"
+                            type="checkbox" 
+                            name="topic" 
+                            velue="Личная консультация в офисе">
+                            <span class="topic-options__icon"></span>
+                            <span class="topic-options__text">Личная консультация в офисе</span>  
+                        </label>
+                    </li>
+                </ul>
+                </div>
+        
+                <div class="form-field files">
+                    <label class="form-comment" for="comment">Загрузите Ваши документы</label>
+                    <input type="file" name="file" id="file">
+                </div>
+        
+                <div class="form-field">
+                    <label class="form-comment" for="">Опишите Вашу ситуацию</label>
+                    <textarea
+                    class="comment" 
+                    name="comment" 
+                    id="comment" 
+                    rows="10" placeholder="">
+                    </textarea>
+                </div>
+        
+                <div class="form-field police-check">
+                   
+                    <label class="checkbox-label">
+                      <input 
+                      class="checkbox"
+                      type="checkbox" 
+                      name="topic" 
+                      velue="Соглашаюсь на обработку персональных данных">
+                      <span class="topic-options__icon"></span>
+                      <span class="topic-options__text police-text">Соглашаюсь на обработку персональных данных</span>  
+                  </label>
+                </div>
+        
+                <button class="btn-submit" type="submit">Оставить заявку</button>
+            </form> 
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="achievement">
-        <h2>Достижения нашей команды для наших клиентов:</h2>
+        <h2 class="achievement-title">Достижения нашей команды для наших клиентов:</h2>
         <ul class="achievement-list list-reset">
-          <li class="achievement-item">
-            <svg class="icon-achievement" width="220px" height="100px">
+          <li class="achievement-list__item">
+            <svg class="achievement-list__icon" width="220px" height="100px">
               <use href="./svg/sprite.svg#icon-court"></use>
             </svg>
-            <p>судебные споры</p>
-            <div class="overlay">
-              <p>
+            <p class="achievement-list__text">судебные споры</p>
+            <div class="achievement-overlay">
+              <p class="achievement-overlay__text">
                 Более чем на <span class="accent">80 миллионов гривен</span> 
                 выиграно судебных споров.
               </p>
             </div>
           </li>
-          <li class="achievement-item">
-            <svg class="icon-achievement" width="220px" height="100px">
+          <li class="achievement-list__item">
+            <svg class="achievement-list__icon" width="220px" height="100px">
               <use href="./svg/sprite.svg#icon-stamp"></use>
             </svg>
-            <p>Регистрация компаний</p>
-            <div class="overlay">
-              <p>
+            <p class="achievement-list__text">Регистрация компаний</p>
+            <div class="achievement-overlay">
+              <p class="achievement-overlay__text">
                 Более <span class="accent">120 компаний</span> зарегистрировано на
                 территории Украины.
               </p>
             </div>
           </li>
-          <li class="achievement-item">
-            <svg class="icon-achievement" width="220px" height="100px">
+          <li class="achievement-list__item">
+            <svg class="achievement-list__icon" width="220px" height="100px">
               <use href="./svg/sprite.svg#icon-Building"></use>
             </svg>
-            <p>Регистрация недвижимости</p>
-            <div class="overlay">
-              <p>
+            <p class="achievement-list__text">Регистрация недвижимости</p>
+            <div class="achievement-overlay">
+              <p class="achievement-overlay__text">
                 Более чем на <span class="accent">160 объектов недвижимости</span>
                 получены документы на ввод в эксплуатацию или о праве
                 собственности.
               </p>
             </div>
           </li>
-          <li class="achievement-item">
-            <svg class="icon-achievement" width="220px" height="100px">
+          <li class="achievement-list__item">
+            <svg class="achievement-list__icon" width="220px" height="100px">
               <use href="./svg/sprite.svg#icon-tax"></use>
             </svg>
-            <p>Споры с налоговой</p>
-            <div class="overlay"> 
-            <p>
+            <p class="achievement-list__text">Споры с налоговой</p>
+            <div class="achievement-overlay"> 
+            <p class="achievement-overlay__text">
               Не менее <span class="accent">98% выигранных судебных споров</span>
                с налоговыми органами.
             </p>
@@ -133,112 +298,112 @@
           </li>
         </ul>
       </section>
-      <section class="about">
-        <div class="about-hero">
-          <h2>О НАС</h2>
-          <p>
+      <section id="about" class="about">
+        <div class="about-us">
+          <h2 class="about-us__title">О НАС</h2>
+          <p class="about-us__text">
             Юридическая фирма "Вариант" основана юристами специализирующимся на
             разных отраслях права, каждый из которых имеет более чем 10-летний
             опыт работы по специальности в Украине.
           </p>
-          <p>
+          <p class="about-us__text">
             Различная специализация наших юристов позволяет комплексно
             анализировать ситуацию клиента для выбора наилучшего варианта ее
             решения.
           </p>
-          <p>
+          <p class="about-us__text">
             Успешным результатом мы считаем не общее количество клиентов, а
             количество положительно выполненных задач и довольных результатом
             клиентов.
           </p>
-          <p>
+          <p class="about-us__text">
             Наша фирма базируется в городе Одесса. Это город в Украине, в
             котором все друг друга знают и репутация тут - дороже денег. Этим
             принципом руководствуется и наша фирма.
           </p>
-          <p>
+          <p class="about-us__text">
             Мы оказываем услуги преимущественно на территории города Одесса и
             Одесской области.
           </p>
         </div>
         <div class="about-clients">
-          <h3>НАШИ КЛИЕНТЫ</h3>
-          <p>Уважаемые и достойные люди.</p>
-          <p>
+          <h3 class="about-clients__title">НАШИ КЛИЕНТЫ</h3>
+          <p class="about-clients__text">Уважаемые и достойные люди.</p>
+          <p class="about-clients__text">
             Мы уважаем анонимность, на которую, безусловно, имеют право все наши
             клиенты, поэтому исключительно им предоставляем право афишировать
             информацию про наше с ними сотрудничество.
           </p>
         </div>
       </section>
-      <div id="servises"></div>
-      <section class="servises-menu">
-        <h2>НАШИ УСЛУГИ</h2>
-        <ul class="servises-list list-reset">
-          <li class="servises-item">
+      <section id="servises" class="servises-menu">
+        <h2 class="servises-menu__title">НАШИ УСЛУГИ</h2>
+        <ul class="servises-menu__list list-reset">
+          <li class="servises-menu__item">
             <div class="servises-link">
-              <a href="./index.html#estate" alt="Регистрация недвижимости">Регистрация Вашей недвижимости</a>
+              <a class="servises-menu__link" href="./index.html#estate" alt="Регистрация недвижимости">Регистрация Вашей недвижимости</a>
             </div>
-            <p>Полный комплекс услуг по регистрации прав на недвижимость</p>
+            <p class="servises-menu__text">Полный комплекс услуг по регистрации прав на недвижимость</p>
           </li>
-          <li class="servises-item">
+          <li class="servises-menu__item">
             <div class="servises-link">
-              <a href="./index.html#bulding" alt="Узаконение нового строительства">Узаконение Вашего нового строительства и реконструкции</a
+              <a class="servises-menu__link" href="./index.html#bulding" alt="Узаконение нового строительства">Узаконение Вашего нового строительства и реконструкции</a
                 >
             </div>
-            <p>
+            <p class="servises-menu__text">
               Оформление разрешительных документов для проведения строительства
               и реконструкции
             </p>
           </li>
-          <li class="servises-item">
+         <li class="servises-menu__item">
             <div class="servises-link">
-              <a href="./index.html#busines" alt="Регистрация бизнеса">Регистрация Вашего бизнеса</a>
+              <a class="servises-menu__link" href="./index.html#busines" alt="Регистрация бизнеса">Регистрация Вашего бизнеса</a>
             </div>
-            <p>Полный комплекс услуг по созданию Вашего бизнеса</p>
+            <p class="servises-menu__text">Полный комплекс услуг по созданию Вашего бизнеса</p>
           </li>
-          <li class="servises-item">
+          <li class="servises-menu__item">
             <div class="servises-link">
-              <a href="./index.html#licvidation" alt="Выкуп Вашего предприятия">Выкуп Вашего предприятия (альтернативная ликвидация)</a>
+              <a class="servises-menu__link" href="./index.html#licvidation" alt="Выкуп Вашего предприятия">Выкуп Вашего предприятия (альтернативная ликвидация)</a>
             </div>
-            <p>Самый оперативный способ ликвидации предприятия</p>
+            <p class="servises-menu__text">Самый оперативный способ ликвидации предприятия</p>
           </li>
-          <li class="servises-item">
+          <li class="servises-menu__item">
             <div class="servises-link">
-              <a href="./index.html#chek" alt="Проверка контрагента">Проверка Вашего контрагента</a>
+              <a class="servises-menu__link" href="./index.html#chek" alt="Проверка контрагента">Проверка Вашего контрагента</a>
             </div>
-            <p>Комплекс услуг по проверке Ваших партнеров</p>
+            <p class="servises-menu__text">Комплекс услуг по проверке Ваших партнеров</p>
           </li>
-          <li class="servises-item">
+          <li class="servises-menu__item">
             <div class="servises-link">
-              <a href="./index.html#courts" alt="Сопровождение судебных процессов">Сопровождение судебных процессов</a>
+              <a class="servises-menu__link" href="./index.html#courts" alt="Сопровождение судебных процессов">Сопровождение судебных процессов</a>
             </div>
-            <p>Представление Ваших интересов в суде</p>
+            <p class="servises-menu__text">Представление Ваших интересов в суде</p>
           </li>
-          <li class="servises-item">
+          <li class="servises-menu__item">
             <div class="servises-link">
-              <a href="./index.html#intelectual" alt="Регистрация интеллектуальной собственности">Регистрация Вашей интеллектуальной собственности</a>
+              <a class="servises-menu__link" href="./index.html#intelectual" alt="Регистрация интеллектуальной собственности">Регистрация Вашей интеллектуальной собственности</a>
             </div>
-            <p>
+            <p class="servises-menu__text">
               Полный комплекс услуг по регистрации Вашего права интеллектуальной
               собственности
             </p>
           </li>
-          <li class="servises-item">
+          <li class="servises-menu__item">
             <div class="servises-link">
-              <a href="./index.html#other-servises" alt="Другие услуги">Другие услуги для Вас</a>
+              <a class="servises-menu__link" href="./index.html#other-servises" alt="Другие услуги">Другие услуги для Вас</a>
             </div>
-            <p>Услуги в других сферах правовой помощи</p>
+            <p class="servises-menu__text">Услуги в других сферах правовой помощи</p>
           </li>
         </ul>
       </section>
-      <div id="estate"></div>
+      <div ></div>
+
       <section class="description">
         <ul class="description-list list-reset">
-          <li class="description-item">
-            <div class="description-general">
-              <h2>Регистрация Вашей недвижимости</h2>
-              <p>
+          <li class="description-item" id="estate">
+            <div class="description-item__general">
+              <h2 class="description-item__title">Регистрация Вашей недвижимости</h2>
+              <p class="description-item__text">
                 Наша фирма окажет Вам полный комплекс услуг по регистрации прав
                 на недвижимость. В частности, организуем регистрацию права
                 собственности на недвижимость, проконсультируем касательно
@@ -248,13 +413,13 @@
                 обременения, обеспечение исков.
               </p>
             </div>
-            <div class="description-content">
-              <ul class="content-list list-reset">
-                <li class="content-item">
-                  <p class="title-h3">
+            <div class="description-content__conteiner">
+              <ul class="description-content__list list-reset">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     регистрация права собственности на квартиру в новострое;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Осуществим регистрацию права собственности на основании
                     полученного от застройщика пакета документов, проанализируем
                     полноту предоставленного застройщиком пакета документов,
@@ -262,12 +427,12 @@
                     получить.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     регистрация права собственности на апартаменты, нежилые
                     помещения в новострое;
-                  </p class="title-h3">
-                  <p>
+                  </p>
+                  <p class="description-content__text">
                     Осуществим регистрацию права собственности на основании
                     полученного от застройщика пакета документов, проанализируем
                     полноту предоставленного застройщиком пакета документов,
@@ -275,13 +440,13 @@
                     получить.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     регистрация права собственности на построенные жилые дома,
                     офисные центры, гаражи, пристройки, подвалы, мансарды,
                     чердаки;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Проанализируем полноту и правильность имеющихся у Вас
                     документов необходимых для регистрации введенных в
                     эксплуатацию объектов, осуществим регистрацию права
@@ -291,12 +456,12 @@
                     решение.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     регистрация права собственности на недвижимое имущество на
                     основании решений судов;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Осуществим регистрацию права собственности на недвижимое
                     имущество на основании вступившего в силу решения суда, в
                     случае отсутствия необходимой информации в резолютивной
@@ -305,35 +470,34 @@
                     Вас.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     регистрация арестов, обеспечений иска, обременений на
                     недвижимое имущество наложенных решениями судов;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Осуществим регистрацию обременений (арестов, обеспечений
                     исков, др.) на основании решений судов.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     регистрация снятия арестов, обеспечений иска, обременений на
                     недвижимое имущество, наложенных решениями судов;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Осуществим регистрацию снятия обременений (арестов,
                     обеспечений исков, др.) на основании решений судов.
                   </p>
-                  <div id="bulding"></div>
                 </li>
                 
               </ul>
             </div>
           </li>
-          <li class="description-item">
-            <div class="description-general">
-              <h2>Узаконение Вашего нового строительства и реконструкции</h2>
-              <p>
+          <li class="description-item" id="bulding">
+            <div class="description-item__general">
+              <h2 class="description-item__title">Узаконение Вашего нового строительства и реконструкции</h2>
+              <p class="description-item__text">
                 Вы собираетесь построить дом или коммерческую недвижимость, но
                 не знаете какие разрешительные документы необходимо получить до
                 начала строительства, а так же какой пакет документов необходим
@@ -342,46 +506,45 @@
                 самостоятельно, и все сделаем за Вас.
               </p>
             </div>
-            <div class="description-content">
-              <ul class="content-list list-reset">
-                <li class="content-item">
-                  <p class="title-h3">
+            <div class="description-content__conteiner">
+              <ul class="description-content__list list-reset">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     оформление разрешительных документов для проведения
                     строительства и реконструкции Вашей недвижимости;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Регистрация уведомления о начале подготовительных или
                     строительных работ, получение разрешения на проведение
                     подготовительных работ, разрешения на строительные работы.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     оформление документов, необходимых для ввода в эксплуатацию
                     Вашей недвижимости;
-                  </p class="title-h3">
-                  <p>
+                  </p>
+                  <p class="description-content__text">
                     Регистрация декларации о готовности объекта к эксплуатации,
                     сертификата о готовности объекта к эксплуатации, отчетов
                     специалистов по строительных вопросам.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">узаконение балконов, фасадных входов, пристроек.</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">узаконение балконов, фасадных входов, пристроек.</p>
+                  <p class="description-content__text">
                     Проведение всех необходимых мероприятий про узаконению
                     балконов, фасадных входов, пристроек с осуществление
                     регистрации права собственности.
                   </p>
                 </li>
-                <div id="busines"></div>
               </ul>
             </div>
           </li>
-          <li class="description-item">
-            <div class="description-general">
-              <h2>Регистрация Вашего бизнеса</h2>
-              <p>
+          <li class="description-item" id="busines">
+            <div class="description-item__general">
+              <h2 class="description-item__title">Регистрация Вашего бизнеса</h2>
+              <p class="description-item__text">
                 Наши сотрудники имеют более чем 10-летний положительный опыт в
                 сфере корпоративного права. С нами создание и регистрация фирмы
                 будет для Вас приятным и очень простым процессом. Мы расскажем
@@ -395,98 +558,97 @@
                 поддержку Вашего бизнеса.
               </p>
             </div>
-            <div class="description-content">
-              <ul class="content-list list-reset">
-                <li class="content-item">
-                  <p class="title-h3">
+            <div class="description-content__conteiner">
+              <ul class="description-content__list list-reset">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     регистрация юридических лиц под ключ (ООО, ЧП, другие);
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Подготовка уставных документов, организация нотариального
                     заверения документов, проведение государственной
                     регистрации, постановка на учет в гос. органы.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     регистрация СПД (физическое лицо-предприниматель) под ключ;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Проведение государственной регистрации, постановка на учет
                     во все гос. органы.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">изменение видов деятельности;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">изменение видов деятельности;</p>
+                  <p class="description-content__text">
                     Добавление в государственный реестр видов деятельности КВЕД
                     или исключение из государственного реестра видов
                     деятельности КВЕД.
-                  </p>
+                  </>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">изменение адреса;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">изменение адреса;</p>
+                  <p class="description-content__text">
                     Подготовка уставных документов необходимых для изменения
                     адреса юридического лица или физического
                     лица-предпринимателя. Проведение государственной регистрации
                     таких изменений.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">изменение контактных данных;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">изменение контактных данных;</p>
+                  <p class="description-content__text">
                     Подготовка уставных документов для внесения соответствующих
                     изменений. Проведение государственной регистрации таких
                     изменений.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">предоставление юридического адреса;</>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">предоставление юридического адреса;</>
+                  <p class="description-content__text">
                     Если у Вас нет офиса, или по тем или иным причинам Вы не
                     хотите указывать фактическое местонахождение в уставных
                     документах, мы предоставим Вам юридический адрес Вашему
                     предприятию.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">изменение размера уставного капитала;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">изменение размера уставного капитала;</p>
+                  <p class="description-content__text">
                     Подготовка уставных документов по увеличению или уменьшению
                     уставного капитала и проведение государственной регистрации
                     таких изменений.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">смена руководителя;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">смена руководителя;</p>
+                  <p class="description-content__text">
                     Подготовка уставных документов по назначению (избранию)
                     нового состава исполнительного органа (директора, Ген.
                     Директора, Правление и др.) и проведение государственной
                     регистрации таких изменений.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     оформление сделок купли-продажи доли в уставном капитале
                     юридического лица.
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Вы хотите приобрести или продать часть в уставном капитале
                     юридического лица? Мы оформим все необходимые документы,
                     связанные с такими изменениями, и проведём государственную
                     регистрацию этих изменений.
                   </p>
-                  <div id="licvidation"></div>
                 </li>
               </ul>
             </div>
           </li>
-          <li class="description-item">
-            <div class="description-general">
-              <h2>Выкуп Вашего предприятия (альтернативная ликвидация)</h2>
-              <p>
+          <li class="description-item" id="licvidation">
+            <div class="description-item__general">
+              <h2 class="description-item__title">Выкуп Вашего предприятия (альтернативная ликвидация)</h2>
+              <p class="description-item__text">
                 В случае, если у Вас есть предприятие, от которого Вы по тем или
                 иным причинам хотите избавиться, а обычная процедура ликвидации
                 или банкротства предприятия Вам не подходит из-за своей
@@ -498,75 +660,70 @@
                 нотариуса.
               </p>
             </div>
-            <div class="description-content licvidation">
-              <h2>Плюсы такой ликвидации очевидны:</h2>
-              <ul class="content-list list-reset">
-                <li class="content-item licvidation">
-                  <p>
+            <div class="description-content__conteiner licvidation">
+             
+              <ul class="description-content__list list-reset">
+                <li class="description-content__item licvidation">
+                  <h2 class="description-content__title">Плюсы такой ликвидации очевидны:</h2>
+                  <p class="description-content__text">
                     Самый оперативный способ ликвидации предприятия (до 2-х дней
                     с момента подписания документов);
                   </p>
                 </li>
-                <li class="content-item licvidation">
-                  <p>
+                <li class="description-content__item licvidation">
+                  <p class="description-content__text">
                     Вы перестаете быть собственником или директором предприятия,
                     даже если у предприятия есть кредиторская или бюджетная
                     задолженность;
                   </p>
                 </li>
-                <li class="content-item licvidation">
-                  <p>
+                <li class="description-content__item licvidation">
+                  <p class="description-content__text">
                     Вы перестаете быть собственником или директором предприятия
                     в момент подписания документов;
                   </p>
                 </li>
-                <li class="content-item licvidation">
-                  <p>
+                <li class="description-content__item licvidation">
+                  <p class="description-content__text">
                     Вы кроме времени, экономите на затратах, которые Вы бы
                     понесли при обычной ликвидации;
                   </p>
                 </li>
-                <li class="content-item licvidation">
-                  <p>
+                <li class="description-content__item licvidation">
+                  <p class="description-content__text">
                     Если случаи, когда обычная процедура ликвидации Вам просто
                     не подойдет, тогда выкуп остаётся единственным приемлемым
                     способом ликвидации;
                   </p>
                 </li>
-                <li class="content-item licvidation">
-                  <p>
+                <li class="description-content__item licvidation">
+                  <p class="description-content__text">
                     Вам не придётся проходить налоговую проверку при ликвидации
                     предприятия путем его выкупа;
                   </p>
                 </li>
-                <li class="content-item licvidation">
-                  <p>
+                <li class="description-content__item licvidation">
+                  <p class="description-content__text">
                     Если Вас заинтересовала такая ликвидация Вашего предприятия,
                     наша фирма окажет профессиональную помощь при ее организации
                     и осуществлении.
                   </p>
                 </li>
-              </ul>
-              <p>
-                Если Вас заинтересовала такая ликвидация Вашего предприятия,
-                наша фирма окажет профессиональную помощь при ее организации и
-                осуществлении.
-              </p>
-              <div id="chek"></div>
+              </ul>            
             </div>
           </li>
-          <li class="description-item">
-            <div class="description-general chek">
-              <h2>Проверка Вашего контрагента</h2>
+          <li class="description-item" id="chek">
+            <div class="description-item__general chek">
+              <h2 class="description-item__title">Проверка Вашего контрагента</h2>
               <figure class="quote">
-                <blockquote>
+                <blockquote class="blockquote">
                   "Самый надежный способ выделить свою компанию среди
                   конкурентов, оторваться от толпы преследователей - это хорошо
                   организовать работу с информацией."
                 </blockquote>
                 <figcaption>-Билл Гейтс.</figcaption>
               </figure>
-              <p>
+              <p class="description-item__text">
                 Вы готовитесь к заключению контракта с новым контрагентом, найму
                 нового сотрудника, предоставлению займа малоизвестному лицу,
                 работе с новым партнером, приобретению недвижимости? Тогда будет
@@ -574,7 +731,7 @@
                 информацию о его добросовестности, чтобы спрогнозировать
                 целесообразность и успешность работы с ним.
               </p>
-              <p>
+              <p class="description-item__text">
                 Так не лишним будет знать, были ли в отношении Вашего
                 контрагента открыты уголовные дела за мошеннические действия,
                 выносились ли решения судов, по которым Ваш контрагент обязан
@@ -589,74 +746,73 @@
                 реестров.
               </p>
             </div>
-            <div class="description-content">
-              <ul class="content-list list-reset">
-                <li class="content-item">
-                  <p class="title-h3">
+            <div class="description-content__conteiner">
+              <ul class="description-content__list list-reset">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     проверка добропорядочности контрагента (стороны по сделке);
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Проверка «криминального прошлого» контрагента, проверка в
                     реестре судебных решений наличия судебных процессов стороной
                     по которым является контрагент, проверка наличия арестов на
                     имуществе контрагента.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     получение справки из реестра недвижимого имущества про
                     объект недвижимости или на физическое (юридическое) лицо;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Получение официального документа относительно собственников
                     объекта недвижимости или про наличие в собственности у
                     интересующего лица объектов недвижимости.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     проверка информации про контрагента в реестре судебных
                     решений;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Поиск в реестре судебных решений судебных дел по которым
                     контрагент являлся или является стороной.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">проверка контрагента в реестре банкротств;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">проверка контрагента в реестре банкротств;</p>
+                  <p class="description-content__text">
                     Получение официального документа про наличие или отсутствие
                     дела о банкротстве контрагента.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">проверка контрагентов в реестре должников;</p>
+                <li class="description-content__item">
+                  <p class="description-content__title">проверка контрагентов в реестре должников;</p>
                   <p>Поиск информации о лице в реестре должников.</p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     проверка контрагентов на предмет привлечения их к уголовной
                     и административной ответственности.
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Проверка «криминального прошлого» контрагента и совершенных
                     административных правонарушений.
                   </p>
-                  <div id="courts"></div>
                 </li>
               </ul>
             </div>
           </li>
-          <li class="description-item">
-            <div class="description-general">
-              <h2>Сопровождение судебных процессов</h2>
+          <li class="description-item" id="courts">
+            <div class="description-item__general">
+              <h2 class="description-item__title">Сопровождение судебных процессов</h2>
             </div>
-            <div class="description-content">
-              <ul class="content-list list-reset">
-                <li class="content-item">
-                  <p class="title-h3">суды общей юрисдикции</p>
-                  <p>
+            <div class="description-content__conteiner">
+              <ul class="description-content__list list-reset">
+                <li class="description-content__item">
+                  <p class="description-content__title">суды общей юрисдикции</p>
+                  <p class="description-content__text">
                     Суды всех инстанций по делам общей юрисдикции (споры между
                     физическими лицами, споры по кредитным договорам физического
                     лица, споры предметом которых, является недвижимость или
@@ -664,17 +820,17 @@
                     споры, трудовые споры, споры по наследству и многое другое).
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">хозяйственные суды</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">хозяйственные суды</p>
+                  <p class="description-content__text">
                     Суды всех инстанций по делам, которые находятся в юрисдикции
                     хозяйственных судов (споры между юридическими лицами, споры
                     из корпоративных отношений, и другие).
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">административные суды</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">административные суды</p>
+                  <p class="description-content__text">
                     Суды всех инстанций по делам, которые находятся в юрисдикции
                     административных судов (обжалование решений, действий или
                     бездействий государственных органов, в том числе обжалование
@@ -684,19 +840,18 @@
                     исполнительной службы и многое другое).
                   </p>
                 </li>
-                <div id="intelectual"></div>
               </ul>
             </div>
           </li>
-          <li class="description-item">
-            <div class="description-general">
-              <h2>Регистрация Вашей интеллектуальной собственности</h2>
+          <li class="description-item" id="intelectual">
+            <div class="description-item__general">
+              <h2 class="description-item__title">Регистрация Вашей интеллектуальной собственности</h2>
             </div>
-            <div class="description-content">
-              <ul class="content-list list-reset">
-                <li class="content-item">
-                  <p class="title-h3">литературные и художественные произведения;</p>
-                  <p>
+            <div class="description-content__conteiner">
+              <ul class="description-content__list list-reset">
+                <li class="description-content__item">
+                  <p class="description-content__title">литературные и художественные произведения;</p>
+                  <p class="description-content__text">
                     Термин «литературные и художественные произведения»
                     охватывает любую продукцию в области литературы, науки и
                     искусства, вне зависимости от способа и формы ее выражения,
@@ -710,9 +865,9 @@
                     архитектуре или наукам.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">компьютерные программы;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">компьютерные программы;</p>
+                  <p class="description-content__text">
                     Осуществляется такими способами: авторское право на исходный
                     код программы; право интеллектуальной собственности на
                     алгоритмы используемые в программах как способы решения
@@ -720,75 +875,75 @@
                     название программы.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">исполнение объектов авторского права;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">исполнение объектов авторского права;</p>
+                  <p class="description-content__text">
                     Исполнение произведений, фонограммы, видеограммы, и другое.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">научные открытия;</p>
-                  <p>
+                <li class="description-content__item">
+                  <p class="description-content__title">научные открытия;</p>
+                  <p class="description-content__text">
                     Научным открытием признается установление неизвестных
                     раньше, но объективно существующих закономерностей, свойств
                     и явлений материального мира, вносящее коренные изменения в
                     уровень научного познания.
                   </p>
                 </li>
-                <li class="content-item">
-                  <p class="title-h3">
+                <li class="description-content__item">
+                  <p class="description-content__title">
                     торговые марки (знаки для товаров и услуг), изобретения,
                     полезные модели, промышленные образцы;
                   </p>
-                  <p>
+                  <p class="description-content__text">
                     Регистрация права интеллектуальной собственности на объекты
                     охраны промышленной собственности.
                   </p>
                 </li>
-                <div id="other-servises"></div>
               </ul>
             </div>
           </li>
-          <li class="description-item">
-            <div class="description-general">
-              <h2>Другие услуги для Вас</h2>
-              <p>
+          <li class="description-item" id="other-servises">
+            <div class="description-item__general">
+              <h2 class="description-item__title">Другие услуги для Вас</h2>
+              <p class="description-item__text">
                 Специалисты нашей фирмы имеют богатый опыт в разных сферах права
                 и помогут комплексно решить почти любой Ваш правовой вопрос.
                 Кроме услуг, описанных в других разделах данного ресурса, мы
                 предоставляем в том числе, но не исключительно следующие услуги:
               </p>
             </div>
-            <div class="description-content">
-              <ul class="content-list list-reset">
-                <li class="content-item other">
-                  <p>получение справки об отсутствии судимости;</p>
+            <div class="description-content__conteiner">
+              <ul class="description-content__list list-reset">
+                <li class="description-content__item other">
+                  <p class="description-content__text">получение справки об отсутствии судимости;</p>
                 </li>
-                <li class="content-item other">
-                  <p>представление Ваших интересов и защита Ваших прав в судах
+                <li class="description-content__item other">
+                  <p class="description-content__text">представление Ваших интересов и защита Ваших прав в судах
                     Украины;</p>
                 </li>
-                <li class="content-item other">
-                  <p>сопровождение нотариальных сделок "под ключ";</p>
+                <li class="description-content__item other">
+                  <p class="description-content__text">сопровождение нотариальных сделок "под ключ";</p>
                 </li>
-                <li class="content-item other">
-                  <p>проверка документов перед нотариальным оформлением сделки;</p>
+                <li class="description-content__item other">
+                  <p class="description-content__text">проверка документов перед нотариальным оформлением сделки;</p>
                 </li>
-                <li class="content-item other">
-                  <p>помощь в оформлении других документов;</p>
+                <li class="description-content__item other">
+                  <p class="description-content__text">помощь в оформлении других документов;</p>
                 </li>
-                <li class="content-item other"><p>Если на данном ресурсе Вы не увидели необходимой именно Вам
+                <li class="description-content__item other">
+                <p class="description-content__text">Если на данном ресурсе Вы не увидели необходимой именно Вам
                   юридической услуги, это не значит, что мы не можем Вам помочь
                   решить Вашу задачу. Свяжитесь с нами и наши специалисты
                   проанализируют Вашу конкретную ситуацию и мы сделаем все
                   возможное, чтобы помочь Вам с ее решением.
                 </p>
               </li>
-              <li class="content-item">
-                <p>составление технического паспорта на объект недвижимости;</p>
+              <li class="description-content__item">
+                <p class="description-content__text">составление технического паспорта на объект недвижимости;</p>
               </li>
-              <li class="content-item">
-                <p>подготовка отчетов независимого оценщика для нотариального
+              <li class="description-content__item">
+                <p class="description-content__text">подготовка отчетов независимого оценщика для нотариального
                   удостоверения сделок с недвижимостью;</p>
               </li>
               </ul>
@@ -797,50 +952,50 @@
         </ul>
       </section>
     </main>
-    <footer class="footer">
-      <div id="contacts" class="footer-container">
+    <footer id="contacts" class="footer">
+      <div class="footer-container">
         <div class="footer-contact">
-          <ul class="list-contact list-reset">
-              <li class="footer-text">
-              <h3>ООО "ЮРИДИЧЕСКАЯ ФИРМА "ВАРИАНТ"</h3>
+          <ul class="footer-contact__list list-reset">
+              <li class="footer-contact__text">
+              <h3 class="footer-contact__title">ООО "ЮРИДИЧЕСКАЯ ФИРМА "ВАРИАНТ"</h3>
               <p>Фактический адрес: Украина, г. Одесса, ул. Академика Королева, 28</p>
               <p>Юридический адрес: 65045, Украина, Одес. обл., г. Одесса, ул. Большая Арнаутская, д. 76, оф. 4</p>
               <p>Код ЕГРПОУ: 42309619</p>
             </li>
-            <li class="tel footer-contact">
+            <li class="footer-contact__tel tel">
               <a href="tel:+380682595975" alt="Позвонить">+38(068)259-59-75</a>
             </li>
-            <li class="mail footer-contact">
+            <li class="footer-contact__mail mail">
               <a href="mailto:uf.variant@gmail.com" alt="Написать письмо">uf.variant@gmail.com</a>
             </li>
           </ul>
         </div>
         <div class="footer-social">
-          <ul class="social list-reset">
-            <li class="facebook social-item">
+          <ul class="footer-social__list list-reset">
+            <li class="facebook footer-social__item">
               <a href="#" alt="фейсбук">
-                <svg class="social-svg" width="2em" heigth="2em">
+                <svg class="social-svg" width="32px" height="32px">
                   <use href="./svg/spritesocial.svg#icon-facebook"></use>
                 </svg> 
               </a>
             </li>
-            <li class="instagram social-item">
+            <li class="instagram footer-social__item">
               <a href="#" alt="инстаграм">
-                <svg class="social-svg" width="2em" heigth="2em">
+                <svg class="social-svg" width="32px" height="32px">
                   <use href="./svg/spritesocial.svg#icon-instagram"></use>
                 </svg> 
               </a>
             </li>
-            <li class="twitter social-item">
+            <li class="twitter footer-social__item">
               <a href="#" alt="твиттер">
-                <svg class="social-svg" width="2em" heigth="2em">
+                <svg class="social-svg" width="32px" height="32px">
                   <use href="./svg/spritesocial.svg#icon-twitter"></use>
                 </svg> 
               </a>
             </li>
-            <li class="linkedin social-item">
+            <li class="linkedin footer-social__item">
               <a href="#" alt="линкедин">
-                <svg class="social-svg" width="2em" heigth="2em">
+                <svg class="social-svg" width="32px" height="32px">
                   <use href="./svg/spritesocial.svg#icon-linkedin"></use>
                 </svg> 
               </a>
@@ -877,5 +1032,55 @@
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
+
+    <script>
+      (() => {
+        const menuBtnRef = document.querySelector("[data-menu-button]");
+        const mobilMenuRef = document.querySelector("[data-menu]");
+
+        menuBtnRef.addEventListener("click", () => {
+          const expanded = 
+          menuBtnRef.getAttribute("aria-expanded") === "true" || false;
+
+        menuBtnRef.classList.toggle("is-open");
+        menuBtnRef.setAttribute("aria-expanded", !expanded);
+
+        mobilMenuRef.classList.toggle("is-open");
+        });
+      })();
+    </script>
+    <script>
+      (() => {
+          document
+          .querySelector('.js-form')
+          .addEventListener('submit', e => {
+              e.preventDefault();
+
+              new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`),
+              );
+
+              e.currentTarget.reset();
+          });
+      })(); 
+  </script>
+
+  <script>
+    (() => {
+      const refs = {
+        openModalBtn: document.querySelector("[data-modal-open]"),
+        closeModalBtn: document.querySelector("[data-modal-close]"),
+        modal: document.querySelector("[data-modal]"),
+      };
+
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+
+      function toggleModal( ) {
+        document.body.classList.toggle("modal-open");
+        refs.modal.classList.toggle("is-hidden");
+      }
+    })();
+  </script>
   </body>
 </html>
